@@ -1,0 +1,40 @@
+.collection {
+  .star-header {
+    color: #f00;
+    font-size: 1.2em;
+  }
+  .star-list {
+    overflow-x: hidden;
+    padding: 0px 30px 20px 30px;
+    .ant-list-header {
+      border-bottom: none;
+      font-family: KaiTi;
+      text-align: center;
+    }
+  }
+  .star-list .ant-list-item-meta-description {
+    color: black;
+  }
+  .star-list .ant-list-item {
+    padding-bottom: 0;
+    padding-left: 1rem;
+    border-radius: 8px;
+    background-color: rgb(251, 112, 108);
+    margin-bottom: .6rem;
+    .ant-list-item-extra {
+      margin-right: 1rem;
+    }
+    .item-des a,
+    .ant-list-item-extra {
+      color: #fff;
+    }
+    @keyframes rotateAnime {
+      0%{transform: translateX(800px)}
+      100%{transform: translateX(0)}
+    }
+    animation: rotateAnime .5s linear;
+  }
+  .star-list .article-author {
+    margin-left: 20px;
+  }
+}

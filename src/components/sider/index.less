@@ -1,0 +1,98 @@
+.sider-container {
+  @keyframes moveTop {
+    0% {
+      transform: translateY(300px);
+    }
+    20% {
+      transform: translateY(240px);
+    }
+    40% {
+      transform: translateY(180px);
+    }
+    60% {
+      transform: translateY(120px);
+    }
+    80% {
+      transform: translateY(60px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  animation: moveTop .5s linear;
+  .ant-card {
+    border-radius: 10px;
+  }
+  .recent-article {
+    margin-top: 20px;
+  }
+  .search {
+    margin-bottom: 20px;
+    background-color: #F0F2F5;
+    .ant-input-affix-wrapper {
+      box-shadow: none;
+      border-radius: 1rem 0 0 1rem !important;
+      border-color: rgb(251, 112, 108); 
+    }
+    .ant-input-group-addon {
+      border-radius: 0 1rem 1rem 0;
+      .ant-btn,
+      .ant-btn-primary {
+        background-color: rgb(251, 112, 108);
+        box-shadow: none !important;
+        border-radius: 0 1rem 1rem 0 !important;
+        border-color: rgb(251, 112, 108);
+        &::after {
+          opacity: 0 !important;
+        }
+        &:focus {
+          background-color: rgb(251, 112, 108) !important;
+        }
+        &:active,
+        &:hover {
+          background: rgb(251, 112, 108) ;
+        }
+      }
+    }
+    .ant-input-group-wrapper {
+      vertical-align: middle;
+      margin-top: -.2rem;
+    }
+  }
+}
+.sider-container
+.ant-card-body {
+  padding: 0;
+}
+.sider-container 
+.recent-list {
+  width: 100%;
+  padding: 0;
+}
+.sider-container 
+.recent-list li {
+  display: block;
+  padding: 5px 24px;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 24px;
+  color: #8590a6;
+  text-align: left;
+  word-wrap: break-word;
+}
+.sider-container 
+.recent-list li:hover {
+  color: #722ed1;
+  background: rgb(246, 246, 246);
+}
+.tags-wrapper {
+  .tags-content {
+    padding: 0 20px 20px;
+  }
+}
+.tags-content {
+  padding: 20px;
+}
+.tags-content .ant-tag {
+  margin: 6px;
+}

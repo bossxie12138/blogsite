@@ -1,0 +1,52 @@
+@media screen and (max-width: 900px) {
+  .ant-card-extra {
+    display: none;
+  }
+}
+.detail {
+  .like {
+    margin-top: 4rem;
+    font-size: 1.2rem;
+    color: #ccc;
+    text-align: right;
+    .heart-icon {
+      margin-right: 4rem;
+      .heart-add {
+        @keyframes changeBgc {
+          50% { color: red;}
+          75% { color: deeppink;}
+          100% { color: none;}
+        }
+        animation: changeBgc 6s linear;
+      }
+    }
+    .folder-icon {
+      margin-right: 2rem;
+    }
+  }
+  .comment {
+    margin-top: 5rem;
+    .ant-list-header {
+      border-bottom: none;
+    }
+    .ant-input {
+      box-shadow: none;
+      border-radius: 8px;
+    }
+    .ant-btn {
+      border-radius: 12px;
+      box-shadow: none;
+      &:nth-child(1) {
+        background-color: rgb(251, 112, 108);
+        border-color: rgb(251, 112, 108);
+      }
+      &:nth-child(2) {
+        background-color: rgb(126, 225, 63);
+        border-color: rgb(126, 225, 63);
+      }
+      &::after {
+        opacity: 0;
+      }
+    }
+  }
+}

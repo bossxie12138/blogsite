@@ -1,0 +1,52 @@
+.list {
+  @keyframes infromRight {
+    0% {
+      transform: translateY(-300px);
+    }
+    20% {
+      transform: translateY(-240px);
+    }
+    40% {
+      transform: translateY(-180px);
+    }
+    60% {
+      transform: translateY(-120px);
+    }
+    80% {
+      transform: translateY(-60px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  animation: infromRight .5s linear;
+}
+.list .ant-list-item {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+.ant-list-item .ant-list-item-meta-title {
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+.read-all {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.list-item {
+  cursor: pointer;
+}
+.list .ant-list-vertical .ant-list-item-action>li {
+  padding: 0 8px;
+}
+.list .ant-list-vertical .ant-list-item-action li {
+  margin: 2px 0;
+}
+.ant-list-item-action-split {
+  background-color: #fff;
+}
+.move-icon {
+  margin-right: 4px;
+}
