@@ -39,7 +39,7 @@ export default function Detail(props) {
       const editorState = EditorState.createWithContent(contentState)
       setEditorState(editorState)
     }
-  }, [dataList])
+  }, [dataList, setEditorState])
 
   useEffect(() => {
     let pusharr = props.location.pathname.split('/')

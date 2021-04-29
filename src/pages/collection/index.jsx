@@ -28,6 +28,7 @@ export default function Collection() {
     pageSize,
     size: 'small',
     current: pageNo,
+    showTitle: false,
     total: dataList.length,
     onChange: handleOnChange
   }

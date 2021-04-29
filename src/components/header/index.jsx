@@ -50,7 +50,7 @@ export default function MyHeader() {
   const toUserCenter = () => history.push('/ui/userinfo')
 
   const logout = () => {
-    localStorage.removeItem('jwtToken')
+    localStorage.removeItem('uiToken')
     dispatch({ type: EXIT })
   }
 
@@ -83,7 +83,7 @@ export default function MyHeader() {
             <svg className="icon logo-icon" aria-hidden="true">
               <use xlinkHref="#icon-sheep"></use>
             </svg>
-            <span className="text-logo">七羊老鬼的博客</span>
+            <span className="text-logo">七羊老鬼的个人网站</span>
           </div>
         </Col>
         <Col lg={{span: 16}} md={{span: 13}} xs={{span: 24}} className='mobile'>

@@ -10,18 +10,19 @@ export default function About(props) {
   return (
     <Card bordered={false} className="about-card">
       <div className="content-inner-wrapper about">
-        <Divider orientation="left">Blog</Divider>
+        <Divider orientation="left">About the site</Divider>
         <p>
           {
             `目前作者还处于学习阶段，搭建此站点的目的是为了记录自己平常所学，
-            博客功能可能较为单一以及一些开发细节没有考虑到。
+            功能上可能较为单一以及一些开发细节暂时没有考虑到。
             后期会进行版本的迭代开发出更多功能，敬请期待。。。`
           }
         </p>
         <p>
           {
-            `博客的前台展示以及中后台管理系统项目已经发布到github上了，欢迎各位大佬前来点星。
-            由于服务端代码为简单的CRUD所以就不上传了。`
+            `项目的前台展示以及中后台管理系统项目已经发布到github上了，
+            做得不好的地方欢迎各位大佬指点。
+            由于服务端代码为简单的CRUD所以没有上传到github。`
           }
         </p>
         <p>
@@ -32,10 +33,10 @@ export default function About(props) {
           }
         </p>
         <p>
-          {`作者服务端的知识水平有限，这里简单使用了开源框架egg.js以及mysql进行博客各项内容的
-            CRUD。当然如果有问题的话也可以向我留言，在后台看到的话我会尽快回复你！`}
+          {`作者服务端的知识水平有限，这里简单使用了开源框架egg.js以及mysql数据库进行各项内容的
+            CRUD。当然如果有问题的话你也可以点击右侧链接向我沟通，在后台看到的话我会尽快给予答复！`}
           <Button onClick={goMsgPage} type="link" style={{ color: '#40A9FF'}}>
-            向作者留言
+            Leave a message to the author
           </Button>
         </p>
         <p className='code'>源码戳这里</p>
@@ -44,7 +45,7 @@ export default function About(props) {
           target="_blank"
           className='link'
           rel="noreferrer noopener"
-          href="https://github.com/bossxie12138/blogAdmin">
+          href="https://github.com/bossxie12138/blogsite">
             前台展示
           </a>
         </p>
@@ -92,7 +93,7 @@ export default function About(props) {
                 数据库：Mysql
               </li>
               <li>
-                其他：webpack、git、网站部署
+                其他：less、git、站点部署
               </li>
             </ul>
           </li>

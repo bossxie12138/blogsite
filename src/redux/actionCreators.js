@@ -93,7 +93,7 @@ export const loginAction = (config) => {
   return async dispatch => {
     let data = await login(config)
     if (data.token) {
-      localStorage.setItem('jwtToken', data.token)
+      localStorage.setItem('uiToken', data.token)
       let userInfo = jwtDecode(data.token)
       dispatch({ data: userInfo, type: LOGIN })
       message.success('登录成功！')
@@ -107,15 +107,16 @@ export const loginAction = (config) => {
 export const editUserAction = value => {
   return async dispatch => {
     let { data } = await editUser(value)
+    const { id, username, nickname, avatar, email, password } = data[0]
     const token = jwt.sign({
-      id: data[0].id,
-      username: data[0].username,
-      nickname: data[0].nickname,
-      avatar: data[0].avatar,
-      email: data[0].email,
-      password: data[0].password
+      id,
+      username,
+      nickname,
+      avatar,
+      email,
+      password
     }, config.jwtSecret)
-    localStorage.setItem('jwtToken', token)
+    localStorage.setItem('uiToken', token)
     dispatch({ data: data[0], type: EDIT_USER })
   }
 }

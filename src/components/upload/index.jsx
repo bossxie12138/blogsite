@@ -27,7 +27,7 @@ class PhotoUpload extends Component {
         email: info.email,
         password: info.password
       }, config.jwtSecret)
-      localStorage.setItem('jwtToken', token)
+      localStorage.setItem('uiToken', token)
     }
   }
 
@@ -48,7 +48,7 @@ class PhotoUpload extends Component {
 
   render() {
     const { fileList } = this.state
-    let { id } = jwtDecode(localStorage.getItem('jwtToken'))
+    let { id } = jwtDecode(localStorage.getItem('uiToken'))
     return (
       <ImgCrop rotate>
         <Upload

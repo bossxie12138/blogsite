@@ -4,7 +4,7 @@ import MyHeader from '../header'
 import MySider from '../sider'
 import './index.less'
 
-const { Content } = Layout
+const { Content, Footer } = Layout
 
 export default function UiLayout(props) {
 
@@ -36,9 +36,19 @@ export default function UiLayout(props) {
                   xs={{ span: 24 }}
                 >
                   { props.children }
+                  <Footer>
+                  <div className="home-footer">
+                    <span>©2021</span>&nbsp;&nbsp;
+                    <a href="https://beian.miit.gov.cn">
+                    黔ICP备2021003344号
+                    </a>
+                  </div>
+                </Footer>
                 </Col>
+               
               </Row>
             </Content>
+            
           </Layout>
         </Layout>
       </Layout>

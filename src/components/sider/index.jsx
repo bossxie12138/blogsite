@@ -39,7 +39,7 @@ export default function Sider() {
     <div className="sider-container">
       <div className="search">
         <Search 
-          placeholder="搜索文章" 
+          placeholder="搜索内容..." 
           onSearch={onSearch} 
           enterButton 
           allowClear
@@ -47,13 +47,13 @@ export default function Sider() {
       </div>
       <div className="tags-wrapper">
         <Card bordered={false} hoverable >
-          <Divider orientation="left">文章导航</Divider>
+          <Divider orientation="left">分类导航</Divider>
           <div className="tags-content">
             <Tag
               onClick={() => dispatch(getHomeList())}
               color={color[Math.floor(Math.random()*color.length)]}
             >
-              全部文章
+              全部
             </Tag>
             {
               classifyList.map(v => (
@@ -72,7 +72,7 @@ export default function Sider() {
       <div className="recent-article">
         <Affix offsetTop={86}>
           <Card bordered={false} hoverable>
-            <Divider orientation="left">最近文章</Divider>
+            <Divider orientation="left">最近更新</Divider>
             <ul className="recent-list">
               {
                 recentDatas.map(v => (

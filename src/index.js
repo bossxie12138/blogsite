@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import { BrowserRouter as Router, Route, Switch,Redirect } from 'react-router-dom'
+import { HashRouter as Router, Route, Switch,Redirect } from 'react-router-dom'
 import jwtDecode from 'jwt-decode'
 import App from './App'
 import { LOGIN } from './redux/actionTypes'
@@ -10,8 +10,8 @@ import store from './redux/store'
 import reportWebVitals from './reportWebVitals'
 import './styles/common.less'
 
-if (localStorage.jwtToken) {
-  store.dispatch({ data: jwtDecode(localStorage.jwtToken), type: LOGIN})
+if (localStorage.uiToken) {
+  store.dispatch({ data: jwtDecode(localStorage.uiToken), type: LOGIN})
 }
 
 ReactDOM.render(
