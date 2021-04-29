@@ -1,70 +1,118 @@
-# Getting Started with Create React App
+# next-blog
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 项目介绍
+利用react框架写的一个简易博客，喜欢就给个Star支持一下。
+[https://github.com/bossxie12138/blogsite](https://github.com/bossxie12138/blogsite)
+线上地址： [https://www.itxlb.cn](https://www.itxlb.cn)
+另外还有一个仓库，放置了博客后台管理系统代码：[https://github.com/bossxie12138/blogAdmin](https://github.com/bossxie12138/blogAdmin)
 
-## Available Scripts
+## 博客架构
+架构说明
+`react.js redux antd mysql node egg.js axios `
 
-In the project directory, you can run:
+## 网站使用技术
 
-### `yarn start`
+- 前端：React(17.x) redux antd-design axios Less
+- 后端：node框架egg.js和mysql （目前前后端分离，这里只负责写接口，和平常的ajax获取接口一样，这里就不开放源码了）
+- 网站目的：业余学习，记录技术文章，学以致用
+- 网站功能
+    - 用户登录注册
+    - 文章点赞
+    - 用户评论
+    - 用户头像更换
+    - 用户留言
+    - 支持手机自适应
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 安装教程
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. 快速开始
 
-### `yarn test`
+**将项目克隆到本地**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+2. 运行
+```bash
+yarn install
+yarn start
+```
+3. 打包
+```bash
+yarn build
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 网站使用技术
 
-### `yarn eject`
+- 前端：React(17.x) Next.js antd-design fetch Less
+- 后端：node框架koa和mysql （目前前后端分离，这里只负责写接口，和平常的ajax获取接口一样，这里就不开放源码了）
+- 网站目的：业余学习，记录技术文章，学以致用
+- 网站功能
+    - 发布文章
+    - 修改文章（增删改查）
+    - 用户评论
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 项目配置
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### 按需加载配置以及less支持
+`config-overrides.js`文件
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```js
+const { 
+  override,
+  fixBabelImports,
+  addLessLoader
+ } = require('customize-cra')
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+ module.exports = override(
+   fixBabelImports('import', {
+     libraryName: 'antd',
+     libraryDirectory: 'es',
+     style: true
+   }),
+   addLessLoader({
+     javascriptEnabled: true,
+     cssModules: {
+       localIndentName: "[path][name]-[local]-[hash:5]"
+     },
+     modifyVars: { '@primary-color': '#722ed1' }
+   })
+ )
 
-## Learn More
+```
+`setupProxy.js`跨域配置
+```js
+const { createProxyMiddleware } = require('http-proxy-middleware')
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+module.exports = function(app) {
+  app.use(createProxyMiddleware('/api', { 
+    target: 'http://127.0.0.1:7001',// 目标服务器地址，这里用到egg所以端口是7001
+    secure: false,
+    changeOrigin: true,
+    pathRewrite: {
+    '/api': '/'
+    }
+  }))
+}
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+## 遗留问题
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. draft.js暂不支持代码高亮
+2. 页面动画存在抖动
+3. 用户找回密码功能尚未完成
+4. BrowserRouter在生产环境出现404
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 待学习修改
+1. 使用marked+highlight.js重构代码高亮问题
+2. eslint
+3. webpack配置
 
-### Advanced Configuration
+## 关于作者 / About
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- github:[https://github.com/bossxie12138/blogsite](https://github.com/bossxie12138/blogsite)
+- 个人博客:[https://www.itxlb.cn](https://www.itxlb.cn)
