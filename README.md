@@ -1,4 +1,4 @@
-# next-blog
+# blogsite
 
 ## 项目介绍
 利用react框架写的一个简易博客，喜欢就给个Star支持一下。
