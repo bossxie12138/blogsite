@@ -42,16 +42,6 @@ yarn build
 
 
 
-### 网站使用技术
-
-- 前端：React(17.x) Next.js antd-design fetch Less
-- 后端：node框架koa和mysql （目前前后端分离，这里只负责写接口，和平常的ajax获取接口一样，这里就不开放源码了）
-- 网站目的：业余学习，记录技术文章，学以致用
-- 网站功能
-    - 发布文章
-    - 修改文章（增删改查）
-    - 用户评论
-
 ### 项目配置
 
 #### 按需加载配置以及less支持
@@ -114,5 +104,5 @@ module.exports = function(app) {
 
 ## 关于作者 / About
 
-- github:[https://github.com/bossxie12138/blogsite](https://github.com/bossxie12138/blogsite)
+- github:[https://github.com/bossxie12138](https://github.com/bossxie12138)
 - 个人博客:[https://www.itxlb.cn](https://www.itxlb.cn)
